@@ -1,4 +1,4 @@
-# Tuning Guide for the OVS-DPDK DSA Experience on 4th Generation Intel® Xeon® Scalable Processors 
+# Guide for Tuning Cassandra on 4th Generation Intel® Xeon® Scalable Processors 
 
 ## Introduction
 
