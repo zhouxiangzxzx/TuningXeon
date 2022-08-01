@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This guide is for users who are already familiar with Cassandra.  It provides recommendations for configuring hardware and software that will provide the best performance in most situations. However, please note that we rely on the users to carefully consider these settings for their specific scenarios, since OVS and DPDK can be deployed in multiple ways. 
+This guide is for users who are already familiar with Cassandra.  It has recommendations for configuring hardware and software that will provide the best performance in most situations. However, please note that we rely on the users to carefully consider these settings for their specific scenarios, since OVS and DPDK can be deployed in multiple ways. 
 
-*(Describe Cassandra)*	
+[Cassandra](https://cassandra.apache.org/_/index.html) is an open-source, distributed, NoSQL database for scalable, reliable, and highly available, largescale storage systems.  
 
 *(Describe pre-requisites)*
 	
@@ -413,42 +413,6 @@ https://github.intel.com/ssgcce/svrinfo
 The following tool captures CPU/Memory/Disk/Network performance details using Linux’s performance monitor tools:
 https://github.com/intel-hadoop/PAT
 
-## FAQ
-
-1.	Where can I download Cassandra?
-As of mid 2022, the current official release version is 3.11.x and 4.0.x. Download binaries and source code from http://archive.apache.org/dist/cassandra/  GitHub is also a good resource place https://github.com/apache/cassandra, but you will need to build from source.
-
-2.	Where can get kernel different than one that comes with OS? 
-https://www.kernel.org/
-
-3	How often do I need to change/update Cassandra?
-Stick with one that works for you and your customers are using. Change only where significant improvement in performance between two versions is or required by your customer. 
-
-3.	Is there a minimum resource per Cassandra process?
-It is recommend to run at minimum 8 VCPU and 32GB of memory per Cassandra Server process.  We typically run with more than twice this for optimal performance.  We also run databases where the database capacity is 2x-8x the size of DRAM.  This ensures we exercise both DRAM and Disk like in the typical Cassandra use case.
-
-4.	What should I use as heap size?
-We are following DataStax (key contributor to Cassandra) recommendations “For a node using G1, the Cassandra community recommends a MAX_HEAP_SIZE as large as possible, up to 64 GB.”  
-
-5.	What are storage requirements?
-In general the faster storage than better unless you want to do comparisons between different drive types. Storage size need to be appropriate to your datasize. In our set up we are using SSDs for the dataset.  Cassandra is IO intensive and a Cassandra process will be IO bound if there is only one standard flash nvme devices per Cassandra process of >20 VCPUs. 
-
-6.	Do I need to rebuild the dataset when I change configuration (drives, CPUs, or mem)?
-No. If you have working dataset on one drive and need to get the same dataset to different type of drives, just copy it.
-
-7.	What are network requirements?
-1Gbe NIC will limit your throughput, 10Gbe or higher is recommend.
-
-8.	Can I have client and server on the same machine? 
-Yes. Your data packages will not be transfer over network. However, if you want to reproduce and report Cassandra performance real use cases, you want to have client and server on different machines.   
-
-9.	How to specify how many entries I want to feed into my data base to get certain 
-dataset size?
-If you use recommended cqlstress-insanity-example.yaml file to create your data set, it 
-will create files of approx. 670 bytes per compressed partition on disk. Here are some estimates:
-For n=600 Million partitions it will built a ~400GB compressed dataset on disk
-
-
 ## Sample script for setting up environment with 4 NVME deices
 
 ```
@@ -506,6 +470,50 @@ ifconfig eno1:3 134.134.101.220 up # need multiple IP addresses Process4
 ## Conclusion
 
 *Use this section as a brief wrap-up for the guide.* 
+
+## Additional Information - FAQ
+
+1.	Where can I download Cassandra?
+
+As of mid 2022, the current official release version is 3.11.x and 4.0.x. Download binaries and source code from http://archive.apache.org/dist/cassandra/  GitHub is also a good resource place https://github.com/apache/cassandra, but you will need to build from source.
+
+2.	Where can get kernel different than one that comes with OS? 
+https://www.kernel.org/
+
+3	How often do I need to change/update Cassandra?
+
+Stick with one that works for you and your customers are using. Change only where significant improvement in performance between two versions is or required by your customer. 
+
+3.	Is there a minimum resource per Cassandra process?
+
+It is recommend to run at minimum 8 VCPU and 32GB of memory per Cassandra Server process.  We typically run with more than twice this for optimal performance.  We also run databases where the database capacity is 2x-8x the size of DRAM.  This ensures we exercise both DRAM and Disk like in the typical Cassandra use case.
+
+4.	What should I use as heap size?
+
+We are following DataStax (key contributor to Cassandra) recommendations “For a node using G1, the Cassandra community recommends a MAX_HEAP_SIZE as large as possible, up to 64 GB.”  
+
+5.	What are storage requirements?
+
+In general the faster storage than better unless you want to do comparisons between different drive types. Storage size need to be appropriate to your datasize. In our set up we are using SSDs for the dataset.  Cassandra is IO intensive and a Cassandra process will be IO bound if there is only one standard flash nvme devices per Cassandra process of >20 VCPUs. 
+
+6.	Do I need to rebuild the dataset when I change configuration (drives, CPUs, or mem)?
+
+No. If you have working dataset on one drive and need to get the same dataset to different type of drives, just copy it.
+
+7.	What are network requirements?
+
+1Gbe NIC will limit your throughput, 10Gbe or higher is recommend.
+
+8.	Can I have client and server on the same machine? 
+
+Yes. Your data packages will not be transfer over network. However, if you want to reproduce and report Cassandra performance real use cases, you want to have client and server on different machines.   
+
+9.	How to specify how many entries I want to feed into my data base to get certain dataset size?
+	
+If you use recommended cqlstress-insanity-example.yaml file to create your data set, it will create files of approx. 670 bytes per compressed partition on disk. Here are some estimates:
+	
+For n=600 Million partitions it will built a ~400GB compressed dataset on disk
+	
 
 ## References (optional, as needed)
 
