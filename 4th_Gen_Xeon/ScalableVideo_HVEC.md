@@ -25,6 +25,13 @@ SVT utilizes multi-channel encoding to accelerate performance. Best results are 
 
 In addition to populating each memory channel, the total amount of system memory is an important consideration. Table 1 below lists the recommended memory per stream type of a given resolution. For example, 6GB of memory is recommended for each FHD stream being processed. To process 64 FHD channel simultaneously, 384 GB (64x6GB) should be allocated.
 
+| Stream Resolution |	Memory recommendation per Stream |
+|--|--|
+| UHD8K |	64 GB |
+| UHD4K |	16 GB |
+| FHD |	6 GB |
+| HD/1080i |	4 GB |
+| SD |	3 GB |
 
 Table 1 Recommended System Memory by Stream Resolution
 
@@ -43,8 +50,7 @@ Intel recommends creating a Linux ramdisk file system for YUV files to avoid lat
 ```
 sudo mount -t tmpfs -o size=<size in bytes> tmpfs <directory_name>
 ```
-*Example: sudo mount -t tmpfs -o size=64g tmpfs /media
-
+Example: sudo mount -t tmpfs -o size=64g tmpfs /media
 
 ## SVT HEVC Encoder Settings
 
@@ -64,7 +70,7 @@ To enable AVX-512, comment out the following line from Source/Lib/Codec/EbDefini
 #define NON_AVX512_SUPPORT
 ```
 
-###Command Line Switches for Performance
+### Command Line Switches for Performance
 
 You’ll find a complete list of the SVT-HEVC configuration switches at the github. Table 2 lists switches associated with runtime performance. -lp and -ss are part of pinning strategies discussed in Chapter 6.
 
@@ -115,14 +121,16 @@ Now for a faster read of the samples, every 64x64 block of the 2-bit picture sho
 
 unroll the 64x64
 
-Invoking the Encoder
+###Invoking the Encoder
+
 This section describes how to run the sample encoder application that uses the SVT-HEVC Encoder library. It describes the input video format, the command line input parameters and the resulting outputs.
 
 The SVT-HEVC encoder achieves the best performance when restricting each channel to only one socket on either Windows* or Linux* operating systems. For example, when running four channels on a dual socket system, it's best to pin two channels to each socket and not split every channel on both sockets. Splitting a channel between sockets can lead to cross socket traffic, impacting the encoder performance. SVT-HEVC provides the -ss option to pin an encode instance to a specified socket. Refer to the following section for examples
 
 The -lp option specifies the number of logical cores the encoder will utilize in execution. In cases where CPU utilization is limited, it is recommended to limit the number of logical cores using -lp. Limiting the number of logical cores reduces threading subscription overhead, resulting in improved performance.
 
-Running a 6-stream 4kp60 simultaneous encode on Ubuntu
+### Running a 6-stream 4kp60 simultaneous encode on Ubuntu
+
 The example illustrates 6 concurrent 1:1 transcode from yuv to FHD4k/10bit/60fps on a dual socket system. Note that the –ss option is used in each command line to pin transcodes execution of that command to a specific socket. Commands 1-3 pin execution to socket 0, and commands 4-6 pin execution to socket 1. The –nb option is used to preload 500 frames into RAM before execution begins. This eliminates the impact of disk reading on encoding speed.
 
 ```
