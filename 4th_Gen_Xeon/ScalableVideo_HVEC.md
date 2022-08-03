@@ -1,3 +1,5 @@
+# SVT-HEVC Encoder Tuning Guide on 3rd Generation Intel® Xeon® Scalable Processors
+
 ## Introduction
 
 This guide is targeted towards users who are already familiar with the Scalable Video Technology for HEVC Encoder (SVT-HEVC) and provides pointers and setting for BIOS, OS, SVT-HEVC encoder, and system settings that will provide the best performance for most situations. However, please note that we rely on the users to carefully consider these settings for their specific scenarios, since SVT-HEVC can be deployed in multiple ways and this is a reference to one such use-case. SVT-HEVC is hosted on both Linux* and Microsoft Server* operating systems. The settings apply to running SVT-HEVC on a 2-socket Intel® Server System with 3rd Generation Intel® Xeon® Scalable Processors and Intel recommends using:
