@@ -89,31 +89,31 @@ Input file format can have a significant impact on transcode performance. This s
 
 The SVT-HEVC Encoder supports the following input formats:
 
-8-bit yuv420p
+#### 8-bit yuv420p
 
-8-bit yuv420p
+![8-bit yuv420p](https://www.intel.com/content/dam/develop/external/us/en/images/svt-video-8.jpg)
 
-10-bit yuv420p10le
+#### 10-bit yuv420p10le
 
-10-bit yuv420p
+![10-bit yuv420p](https://www.intel.com/content/dam/develop/external/us/en/images/svt-video-10.jpg)
 
-Compressed 10-bit format
+#### Compressed 10-bit format
 
 In order to reduce the size of the input original YUV file, the SVT-HEVC Encoder uses a compressed 10-bit format allowing the software to achieve a higher speed and channel density levels. The conversion between the 10-bit yuv420p10le and the compressed 10-bit format is a lossless operation and is performed using the following steps.
 
-Unpack the 10-bit picture
+#### Unpack the 10-bit picture
 
 This step consists of separating the 10-bit video samples into 8-bit and 2-bit planes so that each 10-bit picture will be represented as two separate pictures as shown in the figure below. As a result of the operation, the 2 least significant bits of the 10-bits will be written into a full byte.
 
-unpack the 10-bit 
+![unpack the 10-bit](https://www.intel.com/content/dam/develop/external/us/en/images/svt-unpack.jpg)
 
-10-bit yuv420p10le unpacked
+#### 10-bit yuv420p10le unpacked
 
-Compress the 2-bit Plane
+#### Compress the 2-bit Plane
 
 The unpacking steps separates the 10-bits into a group of 8-bits and a group of 2-bits, where the 2-bits are stored in a byte. In this step, every group of consecutive 4 bytes, each containing 2-bits from the unpacking step, are compressed into one byte. As a result, each 10bit picture will be represented as two separate pictures as shown in the figure below.
 
-Compress the 2-bit plane
+#### Compress the 2-bit plane
 
 Unroll the 64x64
 
