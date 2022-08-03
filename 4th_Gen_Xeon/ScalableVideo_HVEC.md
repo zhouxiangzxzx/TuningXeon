@@ -113,15 +113,15 @@ This step consists of separating the 10-bit video samples into 8-bit and 2-bit p
 
 The unpacking steps separates the 10-bits into a group of 8-bits and a group of 2-bits, where the 2-bits are stored in a byte. In this step, every group of consecutive 4 bytes, each containing 2-bits from the unpacking step, are compressed into one byte. As a result, each 10bit picture will be represented as two separate pictures as shown in the figure below.
 
-#### Compress the 2-bit plane
+![Compress the 2-bit plane](https://www.intel.com/content/dam/develop/external/us/en/images/svt-compress-2.jpg)
 
-Unroll the 64x64
+#### Unroll the 64x64
 
 Now for a faster read of the samples, every 64x64 block of the 2-bit picture should be written into a one dimensional array. Therefore, the top left 64x64 sample block which is now written into 16 bytes x 64 bytes after the compression of the 2-bit samples, will be written into a 1024 bytes x 1 byte array as shown in the picture below.
 
-unroll the 64x64
+![unroll the 64x64](https://www.intel.com/content/dam/develop/external/us/en/images/svt-unroll.jpg)
 
-###Invoking the Encoder
+### Invoking the Encoder
 
 This section describes how to run the sample encoder application that uses the SVT-HEVC Encoder library. It describes the input video format, the command line input parameters and the resulting outputs.
 
