@@ -35,23 +35,23 @@ The configuration described in this article is based on 3rd Generation Intel® X
 
 | Hardware | Model |
 |----------------------------------|------------------------------------|
-| Server Platform Name/Brand/Model | Intel® Server System M50CYP1UR212 |
-| CPU | Intel® Xeon® PLATINUM 8360Y CPU @ 2.20GHz | 
+| Server Platform Name/Brand/Model | Intel® Server System ??? |
+| CPU | Intel® ??? CPU @ ?? GHz | 
 | BIOS | version # | 
-| Memory | 16*32 GB DDR4, 3200 MT/s | 
-| Storage/Disks | Intel SSD S4610, 960G | 
-| NIC (if it applies) | Intel® Ethernet Controller XXV700 25GbE SFP28 | 
+| Memory | ??? | 
+| Storage/Disks | Intel SSD ??? | 
+| NIC (if it applies) | Intel® Ethernet Controller ??? | 
 
 #### Software
 
 | Software | Version |
 |------------------|-------------|
-| Operating System | CentOS* 7.8 | 
-| Kernel | 3.10.0-1127.el7.x86_64 | 
+| Operating System | ??? | 
+| Kernel | ??? | 
 | (Workload) | version # | 
-| Other SW used | version # | 
-| Other SW used | version # | 
-| Other SW used | version # | 
+| Other SW used | ??? | 
+| Other SW used | ??? | 
+| Other SW used | ??? | 
 
 			
 ## Hardware Tuning
@@ -66,12 +66,12 @@ Begin by resetting your BIOS to default setting, then follow the suggestions bel
 
 | Configuration Item | Recommended Value
 |---------------------|------------------|
-| Advanced/Power & Performance/CPU P State Control/CPU P State Control/Enhanced Intel SpeedStep® Tech | Disabled |
-| Advanced/Power & Performance/CPU Power and Performance Policy | Performance |
-| Advanced/Memory Configuration/SNC (Sub-NUMA Clusters) | Enabled |
-| Advanced/Memory Configuration/Page Policy | Closed |
-| Advanced/UPI Configuration/XPT Prefetch | Enabled |
-| Advanced/Processor Configuration/Direct-to-UPI (D2K) | Enabled |
+| Advanced/Power & Performance/CPU P State Control/CPU P State Control/Enhanced Intel SpeedStep® Tech | Disabled ??? |
+| Advanced/Power & Performance/CPU Power and Performance Policy | Performance ??? |
+| Advanced/Memory Configuration/SNC (Sub-NUMA Clusters) | Enabled ??? |
+| Advanced/Memory Configuration/Page Policy | Closed ??? |
+| Advanced/UPI Configuration/XPT Prefetch | Enabled ??? |
+| Advanced/Processor Configuration/Direct-to-UPI (D2K) | Enabled ??? |
 
 If no specific settings apply, then use this text: (No specific BIOS setting for this this workload – just use the defaults)
 
@@ -155,8 +155,6 @@ Example: Note that the recommendations in the guide for WordPress workload are o
 ## Conclusion
 
 Use this section as a brief wrap-up for the guide. 
-
-Example: We understand every application is unique. We shared many of our experiences with MySQL and PostgreSQL hoping that some of our learnings could be applied to your specific application. Both Open-Source relational database management systems have been well tested on Intel platforms. With 3rd Generation Intel® Xeon® Scalable processor, Intel takes it even further by optimizing the platform as a whole -- CPU, memory, storage, and networking working together for the best user experience.
 
 ## Additional Resources (optional, as needed)
 
