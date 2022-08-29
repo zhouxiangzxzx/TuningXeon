@@ -12,15 +12,19 @@ This guide is for users who are already familiar with (the workload).  It provid
 	
 (Describe pre-requisites)
 	
-3rd Generation Intel® Xeon® Scalable processors deliver industry-leading, workload-optimized platforms with built-in AI acceleration.  They provide a seamless performance foundation to help speed the transformative impact of data from the intelligent edge to the multi-cloud. Improvements of particular interest to this workload are: (select those that apply to running this workload)
-- Enhanced Performance
-- Enhanced Intel® Deep Learning Boost with VNNI
-- More Intel® Ultra Path Interconnect
-- Increased DDR4 Memory Speed & Capacity
-- Intel® Advanced Vector Extensions
-- Intel® Security Essentials and Intel® Security Libraries for Data Center 
-- Intel® Speed Select Technology
-- Support for Intel® Optane™ Persistent Memory 200 series
+4th Gen Intel® Xeon® Scalable processors deliver workload-optimized performance with built-in acceleration for AI, encryption, HPC, storage, database systems, and networking. They feature unique security technologies to help protect data on-premises or in the cloud.
+
+•	New built in accelerators for AI, HPC, Networking, Security, Storage and Analytics
+•	Intel® Ultra Path Interconnect (Intel® UPI)
+•	Intel® Speed Select Technology
+•	Hardware-enhanced security 
+•	New flex bus I/O interface (PCIe 5.0 + CXL) 
+•	New flexible I/O interface up to 20 HSIO lanes (PCI 3.0)
+•	Increased input/output (I/O) bandwidth with PCIe 5.0 (up to 80 lanes) 
+•	Increased memory bandwidth with DDR5 
+•	Increased multi-socket bandwidth with UPI 2.0 (up to 16 GT/s) 
+•	Support for Intel Optane PMem 300 series 
+
 
 ### Power Configuration
 (Add verbiage here)
