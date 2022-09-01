@@ -14,16 +14,16 @@ This guide is for users who are already familiar with (the workload).  It provid
 	
 4th Gen Intel® Xeon® Scalable processors deliver workload-optimized performance with built-in acceleration for AI, encryption, HPC, storage, database systems, and networking. They feature unique security technologies to help protect data on-premises or in the cloud.
 
-•	New built in accelerators for AI, HPC, Networking, Security, Storage and Analytics
-•	Intel® Ultra Path Interconnect (Intel® UPI)
-•	Intel® Speed Select Technology
-•	Hardware-enhanced security 
-•	New flex bus I/O interface (PCIe 5.0 + CXL) 
-•	New flexible I/O interface up to 20 HSIO lanes (PCI 3.0)
-•	Increased input/output (I/O) bandwidth with PCIe 5.0 (up to 80 lanes) 
-•	Increased memory bandwidth with DDR5 
-•	Increased multi-socket bandwidth with UPI 2.0 (up to 16 GT/s) 
-•	Support for Intel Optane PMem 300 series 
+- New built in accelerators for AI, HPC, Networking, Security, Storage and Analytics
+- Intel® Ultra Path Interconnect (Intel® UPI)
+- Intel® Speed Select Technology
+- Hardware-enhanced security 
+- New flex bus I/O interface (PCIe 5.0 + CXL) 
+- New flexible I/O interface up to 20 HSIO lanes (PCI 3.0)
+- Increased input/output (I/O) bandwidth with PCIe 5.0 (up to 80 lanes) 
+- Increased memory bandwidth with DDR5 
+- Increased multi-socket bandwidth with UPI 2.0 (up to 16 GT/s) 
+- Support for Intel Optane PMem 300 series 
 
 
 ### Power Configuration
