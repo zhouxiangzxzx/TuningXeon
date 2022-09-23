@@ -16,7 +16,7 @@ The 4th Generation Intel&reg; Xeon&reg; Scalable Processor platform is an unique
 
 A typical deep learning application has following stages:
 
-![](https://github.com/intel-sandbox/tuning_guides.spr.ai/blob/dev-202208/images/dl-stages.jpg)
+![Deep Learning stages](images/dl-stages.jpg)
 
 Each stage requires the allocation of these resources:  
 
@@ -28,7 +28,7 @@ Each stage requires the allocation of these resources:
 
 Choosing the right combination of resources greatly accelerates the efficiency of your AI services.  All of the processes including dataset preparation, model training, model optimization, and model deployment, can be done on a 4th Generation Intel&reg; Xeon&reg; Scalable Processor platform-based infrastructure that supports machine learning/deep learning platforms for training and inference. A proposed infrastructure is shown in the figure below:
 
-![](https://github.com/intel-sandbox/tuning_guides.spr.ai/blob/dev-202208/images/dl-infrastructure.jpg)
+![Deep Learning infrastructure](images/dl-infrastructure.jpg)
 
 ### AI Optimization Topics
 
