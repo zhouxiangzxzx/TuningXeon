@@ -4,7 +4,7 @@ These tuning guides provide guidance on the BIOS, Operating System and workload/
 
 ## AI
 
-Deep Learning Optimization
+[Deep Learning](DeepLearning/spr_overview.md)
 
 ## Databases 
 
