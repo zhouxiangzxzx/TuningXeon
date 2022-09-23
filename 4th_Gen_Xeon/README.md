@@ -4,7 +4,7 @@ These tuning guides provide guidance on the BIOS, Operating System and workload/
 
 ## AI
 
-[Deep Learning](DeepLearning/spr_overview.md)
+[Tuning Guide for Deep Learning with Intel® AVX512 and Intel® Deep Learning Boost on 4th Generation Intel® Xeon® Scalable Processors](DeepLearning/spr_overview.md)
 
 ## Databases 
 
